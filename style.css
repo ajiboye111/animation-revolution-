@@ -1,0 +1,264 @@
+:root {
+  --primary-color: #FFD700;
+  --secondary-color: #0A192F;
+  --main-color: #050816;
+  --accent-color: #FF4500;
+  --background-color: #050816;
+  --text-color: #FFFFFF;
+  --heading-color: #FFD700;
+  --card-color: #17233F;
+  --border-color: #334155;
+  --hover-color: #FF4500;
+  --success-color: #22C55E;
+  --danger-color: #EF4444;
+  --live-color: #FF0000;
+  --shadow-color: rgba(255, 215, 0, 0.2);
+  --overlay-color: rgba(5, 8, 22, 0.65);
+  --transition: 0.4s ease;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: var(--main-color);
+  align-items: center;
+  justify-content: center;
+  
+}
+header{
+  background: var(--main-color);
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-color);
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.logo{
+  display: flex;
+  padding: 30px;
+  gap: 10px;
+}
+.logo h2{
+  font-size: 32px;
+  font-weight: 800;
+  animation-name: fadeIn-Down;
+  animation-duration: 8s;
+  animation-delay: 6s;
+  animation-iteration-count: infinite;
+}
+ .logo a{
+   text-decoration: none;
+   color: var(--text-color);
+   font-size: 20px;
+   font-weight: 800;
+   animation: slide-left;
+   animation-duration: 6s;
+  animation-delay: 5s;
+   animation-timing-function: ease-in-out;
+   animation-direction: normal;
+   animation-iteration-count: infinite;
+ }
+@keyframes fadeIn-Down{
+  from{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-left{
+  from{
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+ .hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   position: fixed;
+  padding: 60px 9% 0;
+  line-height: 2;
+
+  background-image:
+    linear-gradient(
+      var(--overlay-color),
+      var(--overlay-color)
+    ),
+    url("https://i.ibb.co/d4q9pxJ3/f8c1ea2c67dc573c21d126ead1ae6665.png");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: var(--text-color);
+
+  animation:
+    fadeIn 3s ease-in-out,
+    changeImage 15s ease-in-out 3s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes changeImage {
+  0%, 30% {
+    background-image:
+      linear-gradient(
+        var(--overlay-color),
+        var(--overlay-color)
+      ),
+      url("https://i.ibb.co/d4q9pxJ3/f8c1ea2c67dc573c21d126ead1ae6665.png");
+  }
+
+  33%, 63% {
+    background-image:
+      linear-gradient(
+        var(--overlay-color),
+        var(--overlay-color)
+      ),
+      url("https://i.ibb.co/C5gsYrSm/abf303806642f84a22307a08a4dbd340.png");
+  }
+
+  66%, 96% {
+    background-image:
+      linear-gradient(8
+        var(--overlay-color),
+        var(--overlay-color)
+      ),
+      url("https://i.ibb.co/mCPkdgnp/3fb5c82aabd32009610061aeee10d298.png");
+  }
+
+  100% {
+    background-image:
+      linear-gradient(
+        var(--overlay-color),
+        var(--overlay-color)
+      ),
+      url("https://i.ibb.co/d4q9pxJ3/f8c1ea2c67dc573c21d126ead1ae6665.png");
+  }
+}
+@media(max-width: 500px){
+   .logo{
+    flex-direction: column;
+     text-align: center;
+     padding: 10px;
+  }
+  .logo h2{
+    font-size: 20px;
+  }
+   .logo a{
+     font-size: 12px;
+  }
+  .hero{
+    padding: 45px;
+    text-align: center;
+  }
+}
+@keyframes changeImage{
+  0%{
+    background-image: url("https://i.ibb.co/d4q9pxJ3/f8c1ea2c67dc573c21d126ead1ae6665.png");
+    animation-delay: 2s;
+  }
+  15%{
+    background-image:  url("https://i.ibb.co/C5gsYrSm/abf303806642f84a22307a08a4dbd340.png");
+    animation-delay: 1s;
+  }
+  25%{
+    background-image: url("https://i.ibb.co/mCPkdgnp/3fb5c82aabd32009610061aeee10d298.png");
+  }
+  35%{
+    background-image: url("https://i.ibb.co/35tvHqKg/65f28b3fe4de42f47c6b5c3e8016977f.png");
+  }
+  45%{
+    background-image: url("https://i.ibb.co/cjtQV6J/550726d3267ba8f79a038d91d23c3ac0.png")
+  }
+  55%{
+    background-image: url("https://i.ibb.co/5XdxK8p8/radio.png")
+  }
+  75%{
+    background-image: url("https://i.ibb.co/Z4Xk6Wk/radio-1.png")
+  }
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.hero-text h1{
+  animation: fadeInRight 4s  ease-in-out;
+}
+@keyframes fadeInRight{
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.hero-text h3{
+  animation: fadeInLeft 2s ease-in-out;
+}
+@keyframes fadeInLeft {
+  from{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.hero-text h4, .hero-text h6, .hero-text p{
+  animation: slideDown 13s ease-in-out;
+}
+.hero-text h4{
+  animation-delay: 6s;
+  animation-duration: 7s;
+}
+.hero-text h6{
+  animation-delay: 4s;
+  animation-duration: 5s;
+}
+.hero-text p{
+  animation-delay: 5s;
+  animation-duration: 6s;
+}
+@keyframes slideDown{
+  from{
+    transform: translateY(300px);
+    opacity: 0
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
